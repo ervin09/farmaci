@@ -1,5 +1,6 @@
 
-<?php include '../header.php'; ?> 
+<?php include '../header.php'; 
+?>
 
 <div id="content">
 <div class="post">
@@ -53,29 +54,57 @@ if(!is_logged_in()) {
 	<div class="tabela">
 
 <script language="javascript" type="text/javascript" src="js/script.js" ></script>
+<form method="post" action="">    
 
-<INPUT type="button"  value="Shto nje produkt te ri" onclick="addRow('dataTable')" />
+<INPUT type="button"  value="Shto produkt ri" onclick="addRow('dataTable')" />
  
-    <INPUT type="button" value="Fshi nje produket" onclick="deleteRow('dataTable')" />
+    <INPUT type="button" value="Fshi produkt" onclick="deleteRow('dataTable')" />
  		
- 		<input type="submit" name="submit" onclick="javascript: form.action='ac.php'">
+ 		<input type="submit" name="add" value="store" />
  		
+<?php 
+
+$hostname = "localhost";
+$db_user = "";
+$db_password = "";
+$database = "farmacia";
+$db_table = "magazina";
+
+if( isset( $_REQUEST['add'] ) ) {
+		
+$sasia=$_POST['sasia'];
+$njesia=$_POST['njesia'];
+$emertimi =$_POST['emertimi'];
+$cmimi=$_POST['cmimi'];
+
+	if($_REQUEST['store'] !='') {
+		$barcode = $_POST['barcode'];
+	
+		$sql=mysql_query("INSERT INTO magazina (barcode, njesia, ermertimi, sasia, cmimi,)VALUES($barcode, $njesia, $emertimi, $sasia, $cmimi)");
+	?>
+	<pre> <?php	print_r($sql); ?> </pre>
+	<?php
+	}
+	header('Location: http://localhost/ervin/admin/');
+	}
+?> 		
  	
-            
+     <form method="post" action="">    
+        
     <TABLE id="dataTable" border="1">    			   
      <TR>  	 
        	  
        	   <TD><INPUT type="checkbox" name="chk"/></TD>
             <TD >1</TD>
-            <TD> <INPUT type="text" / placeholder="Barcode" name="barcode"> </TD>
-            <TD> <INPUT type="text" / placeholder="Njesia" name="njesia"> </TD>
-            <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi"> </TD>
-            <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" > </TD>
-            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi"> </TD>
+            <TD> <INPUT type="text" / placeholder="Barcode" name="barcode" value="<?php if( isset( $sql['barcode'] ) ) echo $sql['barcode']; ?>"> </TD>
+            <TD> <INPUT type="text" / placeholder="Njesia" name="njesia" value="<?php if( isset( $sql['njesia'] ) ) echo $sql['njesia']; ?>"> </TD>
+            <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi" value="<?php if( isset( $sql['emertimi'] ) ) echo $sql['emertimi']; ?>"> </TD>
+            <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" value="<?php if( isset( $sql['sasia'] ) ) echo $sql['sasia']; ?>"> </TD>
+            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi" value="<?php if( isset( $sql['cmimi'] ) ) echo $sql['cmimi']; ?>"> </TD>
            
         </TR> 
     </TABLE>
-
+</form>
 	</div>
 	
 	
