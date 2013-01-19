@@ -43,9 +43,6 @@ if(!is_logged_in()) {
 
 <p>Succesful Login</p>
 	
-	<a href ="http://localhost/ervin1/admin/?page=pages">Pages</a>
-	<a href ="http://localhost/ervin1/admin/?page=profile">Profile</a>
-	<a href ="http://localhost/ervin1/admin/?page=news">News</a>
 
 	<?php }?>
 	
@@ -57,24 +54,24 @@ if(!is_logged_in()) {
 
 <script language="javascript" type="text/javascript" src="js/script.js" ></script>
 
-<INPUT type="button" value="Shto nje produkt te ri" onclick="addRow('dataTable')" />
+<INPUT type="button"  value="Shto nje produkt te ri" onclick="addRow('dataTable')" />
  
     <INPUT type="button" value="Fshi nje produket" onclick="deleteRow('dataTable')" />
  		
- 		<input type="submit">
+ 		<input type="submit" name="submit" onclick="javascript: form.action='ac.php'">
  		
  	
             
-    <TABLE id="dataTable" width="350px" border="1">    			   
+    <TABLE id="dataTable" border="1">    			   
      <TR>  	 
        	  
        	   <TD><INPUT type="checkbox" name="chk"/></TD>
             <TD >1</TD>
-            <TD> <INPUT type="text" / placeholder="Barcode"> </TD>
-            <TD> <INPUT type="text" / placeholder="Njesia"> </TD>
-            <TD> <INPUT type="text" / placeholder="Emertimi"> </TD>
-            <TD> <INPUT type="text" / placeholder="Sasia"> </TD>
-            <TD> <INPUT type="text" / placeholder="Cmimi"> </TD>
+            <TD> <INPUT type="text" / placeholder="Barcode" name="barcode"> </TD>
+            <TD> <INPUT type="text" / placeholder="Njesia" name="njesia"> </TD>
+            <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi"> </TD>
+            <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" > </TD>
+            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi"> </TD>
            
         </TR> 
     </TABLE>

@@ -5,7 +5,7 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('DB', 'Farmacia');
+define('DB', 'farmacia');
 
 $db = mysql_connect( HOST, USER, PASS ) or die('Cannot Connect');
 		mysql_select_db( DB );
