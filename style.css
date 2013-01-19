@@ -332,5 +332,18 @@ label {display:block;
 		float: left;
 		text-align: left;
 }
+
 .logout a {color: red;
+	margin-top: 20px; 
+	line-height: normal;
+	font-family: Georgia,"Times New Roman", Times, serif;
+	font-weight: normal;
+	font-size: 18px;
 	}
+
+.tabela{margin: 35px auto;}
+
+#dataTable{width: 580px;
+	display: inline-block;}
+#dataTable input{width:83px;}
+

@@ -52,6 +52,36 @@ if(!is_logged_in()) {
 	<div class="logout">
 	<h2><a href="http://localhost/ervin1/admin/?dil=true">Emergency Exit</a></h2>
 	</div>
+	
+	<div class="tabela">
+
+<script language="javascript" type="text/javascript" src="js/script.js" ></script>
+
+<INPUT type="button" value="Shto nje produkt te ri" onclick="addRow('dataTable')" />
+ 
+    <INPUT type="button" value="Fshi nje produket" onclick="deleteRow('dataTable')" />
+ 		
+ 		<input type="submit">
+ 		
+ 	
+            
+    <TABLE id="dataTable" width="350px" border="1">    			   
+     <TR>  	 
+       	  
+       	   <TD><INPUT type="checkbox" name="chk"/></TD>
+            <TD >1</TD>
+            <TD> <INPUT type="text" / placeholder="Barcode"> </TD>
+            <TD> <INPUT type="text" / placeholder="Njesia"> </TD>
+            <TD> <INPUT type="text" / placeholder="Emertimi"> </TD>
+            <TD> <INPUT type="text" / placeholder="Sasia"> </TD>
+            <TD> <INPUT type="text" / placeholder="Cmimi"> </TD>
+           
+        </TR> 
+    </TABLE>
+
+	</div>
+	
+	
 </div>
 </div>
 
