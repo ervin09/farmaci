@@ -1,4 +1,5 @@
-    function addRow(tableID) {
+ function addRow(tableID) {
+
  
             var table = document.getElementById(tableID);
  
@@ -32,14 +33,23 @@
             element2.type = "text";
             element2.name = "txtbox[]";
             cell3.appendChild(element2);
-                        
+
+            
+            var cell3 = row.insertCell(2);
+            var element2 = document.createElement("input");
+            element2.type = "text";
+            element2.name = "txtbox[]";
+            cell3.appendChild(element2);
+            
+
             var cell3 = row.insertCell(2);
             var element2 = document.createElement("input");
             element2.type = "text" ;
             element2.name = "txtbox[]" ;
-            cell3.appendChild(element2);
+
            
           
+
                <!--  end of function   -->
  
  

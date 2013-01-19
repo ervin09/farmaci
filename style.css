@@ -343,7 +343,13 @@ label {display:block;
 
 .tabela{margin: 35px auto;}
 
+
 #dataTable{width: 530px;
 	display: inline-block;}
 #dataTable input{width:92px;}
+
+#dataTable{width: 580px;
+	display: inline-block;}
+#dataTable input{width:83px;}
+
 
