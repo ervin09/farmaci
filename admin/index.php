@@ -1,6 +1,5 @@
 
-<?php include '../header.php'; 
-?>
+<?php include '../header.php';?>
 
 <div id="content">
 <div class="post">
@@ -50,10 +49,10 @@ if(!is_logged_in()) {
 	<div class="logout">
 	<h2><a href="http://localhost/ervin1/admin/?dil=true">Emergency Exit</a></h2>
 	</div>
-	
-	<div class="tabela">
+	<div class="tabela">
 
 <script language="javascript" type="text/javascript" src="js/script.js" ></script>
+
 <form method="post" action="">    
 
 <INPUT type="button"  value="Shto produkt ri" onclick="addRow('dataTable')" />
@@ -76,44 +75,35 @@ echo "Connected to MySQL<br>";
 
 $selected = mysql_select_db("farmacia",$dbhandle) 
   or die("Could not select farmacia");
-  
-
-$result = mysql_query("SELECT * FROM magazina");
 
 
-if( isset( $_REQUEST['add'] ) ) {
-		
 
+if (!isset($_REQUEST['store'])) {
 $sasia=$_POST['sasia'];
 $njesia=$_POST['njesia'];
 $emertimi =$_POST['emertimi'];
 $cmimi=$_POST['cmimi'];
-
-
-if (!isset($_REQUEST['store'])) {
    
 $sql=mysql_query("INSERT INTO magazina VALUES('$njesia', '$emertimi', '$sasia', '$cmimi')");
 
 }else {
 	die("Could not insert");
 	}
-	mysql_close($dbhandle);	}
-?> 		
+	mysql_close($dbhandle);?> 		
  	
      <form method="post" action="">    
         
     <TABLE id="dataTable" border="1">    			   
      <TR>  	 
-       	  
        	   <TD><INPUT type="checkbox" name="chk"/></TD>
             <TD >1</TD>
-
-            <TD> <INPUT type="text" / placeholder="Njesia" name="njesia" > </TD>
-            <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi" > </TD>
-            <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" > </TD>
-            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi" > </TD>       </TR> 
+            <TD><INPUT type="text" / placeholder="Njesia" name="njesia" > </TD>
+            <TD><INPUT type="text" / placeholder="Emertimi" name="emertimi" > </TD>
+            <TD><INPUT type="text" / placeholder="Sasia" name="sasia" > </TD>
+            <TD><INPUT type="text" / placeholder="Cmimi" name="cmimi" > </TD>       </TR> 
     </TABLE>
 </form>
+
 	</div>
 	
 	
