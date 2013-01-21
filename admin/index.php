@@ -81,13 +81,6 @@ $selected = mysql_select_db("farmacia",$dbhandle)
 $result = mysql_query("SELECT * FROM magazina");
 
 
-
-$hostname = "localhost";
-$db_user = "";
-$db_password = "";
-$database = "farmacia";
-$db_table = "magazina";
-
 if( isset( $_REQUEST['add'] ) ) {
 		
 
@@ -104,20 +97,7 @@ $sql=mysql_query("INSERT INTO magazina VALUES('$njesia', '$emertimi', '$sasia', 
 }else {
 	die("Could not insert");
 	}
-
-	mysql_close($dbhandle);
-
-	if($_REQUEST['store'] !='') {
-		$barcode = $_POST['barcode'];
-	
-		$sql=mysql_query("INSERT INTO magazina (barcode, njesia, ermertimi, sasia, cmimi,)VALUES($barcode, $njesia, $emertimi, $sasia, $cmimi)");
-	?>
-	<pre> <?php	print_r($sql); ?> </pre>
-	<?php
-	}
-	header('Location: http://localhost/ervin/admin/');
-	}
-
+	mysql_close($dbhandle);	}
 ?> 		
  	
      <form method="post" action="">    
@@ -131,17 +111,7 @@ $sql=mysql_query("INSERT INTO magazina VALUES('$njesia', '$emertimi', '$sasia', 
             <TD> <INPUT type="text" / placeholder="Njesia" name="njesia" > </TD>
             <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi" > </TD>
             <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" > </TD>
-            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi" > </TD>
-
-            <TD> <INPUT type="text" / placeholder="Barcode" name="barcode" value="<?php if( isset( $sql['barcode'] ) ) echo $sql['barcode']; ?>"> </TD>
-            <TD> <INPUT type="text" / placeholder="Njesia" name="njesia" value="<?php if( isset( $sql['njesia'] ) ) echo $sql['njesia']; ?>"> </TD>
-            <TD> <INPUT type="text" / placeholder="Emertimi" name="emertimi" value="<?php if( isset( $sql['emertimi'] ) ) echo $sql['emertimi']; ?>"> </TD>
-            <TD> <INPUT type="text" / placeholder="Sasia" name="sasia" value="<?php if( isset( $sql['sasia'] ) ) echo $sql['sasia']; ?>"> </TD>
-            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi" value="<?php if( isset( $sql['cmimi'] ) ) echo $sql['cmimi']; ?>"> </TD>
-
-
-           
-        </TR> 
+            <TD> <INPUT type="text" / placeholder="Cmimi" name="cmimi" > </TD>       </TR> 
     </TABLE>
 </form>
 	</div>

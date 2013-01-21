@@ -346,10 +346,10 @@ label {display:block;
 
 #dataTable{width: 530px;
 	display: inline-block;}
-#dataTable input{width:92px;}
+#dataTable input{width:80px;}
 
-#dataTable{width: 580px;
+#dataTable{width: 500px;
 	display: inline-block;}
-#dataTable input{width:83px;}
+#dataTable input{width:86px;}
 
 
